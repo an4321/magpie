@@ -3,8 +3,7 @@
 	"scripts": {
 		"dev": "bun run --hot server/index.ts",
 		"client": "cd client && bun dev",
-		"client-build": "cd client && bun run build",
-		"all": "concurrently 'bun dev' 'cd client && bun dev'",
+		"build": "cd client && bun run build",
 		"dbg": "drizzle-kit generate",
 		"dbm": "drizzle-kit migrate",
 		"dbp": "drizzle-kit push",
@@ -21,7 +20,6 @@
 	},
 	"devDependencies": {
 		"@types/bun": "latest",
-		"concurrently": "^9.2.1",
 		"drizzle-kit": "^0.31.7",
 		"tsx": "^4.20.6"
 	}
