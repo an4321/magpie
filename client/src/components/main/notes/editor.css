@@ -1,0 +1,239 @@
+/* @import "../../styles/globals.css"; */
+
+/* Basic editor styles */
+.tiptap {
+	outline: none;
+	border: none;
+	box-shadow: none;
+	line-height: 1.1;
+	color: var(--foreground);
+	font-family: sans-serif;
+	min-height: 100px;
+	font-size: 1.2em;
+}
+
+/* Consistent spacing for first child */
+.tiptap :first-child {
+	margin-top: 0;
+}
+
+/* Headings */
+.tiptap h1,
+.tiptap h2,
+.tiptap h3,
+.tiptap h4,
+.tiptap h5,
+.tiptap h6 {
+	margin-top: 1rem;
+	margin-bottom: 0.25rem;
+	text-wrap: pretty;
+	font-weight: 600;
+	color: var(--foreground);
+}
+.tiptap h1 {
+	font-size: 1.5em;
+}
+.tiptap h2 {
+	font-size: 1.3em;
+}
+.tiptap h3 {
+	font-size: 1.15em;
+}
+
+/* Paragraphs */
+.tiptap p {
+	margin-bottom: 0.2em;
+}
+
+/* Lists */
+.tiptap ul,
+.tiptap ol {
+	padding: 0.3rem 0.75rem;
+}
+
+.tiptap ul li p,
+.tiptap ol li p {
+	margin: 0.4em 0;
+}
+
+.tiptap ul li {
+	list-style-type: disc;
+	margin-left: 1rem;
+}
+
+.tiptap ol li {
+	list-style-type: decimal;
+	margin-left: 1rem;
+}
+
+/* Code */
+.tiptap code {
+	background-color: var(--muted);
+	border-radius: 0.3em;
+	color: var(--muted-foreground);
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 0.9em;
+	padding: 0.2em 0.4em;
+	white-space: nowrap;
+}
+
+.tiptap pre {
+	background: var(--foreground);
+	border-radius: 0.5rem;
+	color: var(--background);
+	font-family: 'JetBrains Mono', monospace;
+	margin: 1.5rem 0;
+	padding: 1rem 1.25rem;
+	overflow-x: auto;
+}
+
+.tiptap pre code {
+	background: none;
+	color: inherit;
+	font-size: 0.9em;
+	padding: 0;
+	white-space: pre;
+}
+
+/* Blockquote */
+.tiptap blockquote {
+	border-left: 4px solid var(--border);
+	margin: 1.5rem 0;
+	padding-left: 1.25rem;
+	color: var(--muted-foreground);
+	font-style: italic;
+}
+
+/* Horizontal Rule */
+.tiptap hr {
+	border: none;
+	border-top: 1px solid var(--border);
+	margin: 2.5rem 0;
+	opacity: 0.7;
+}
+
+/* Image styling (if applicable) */
+.tiptap img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 0.5rem;
+	margin: 1.5rem 0;
+	display: block;
+}
+
+/* Link styling */
+.tiptap a {
+	color: var(--primary);
+	text-decoration: none;
+	transition: color 0.2s ease-in-out;
+}
+
+.tiptap a:hover {
+	text-decoration: underline;
+	color: var(--primary-darker);
+}
+
+/* Bubble Menu */
+.bubble-menu {
+	background-color: var(--popover);
+	border: 2px solid var(--border);
+	border-radius: 0.6rem;
+	box-shadow: var(--shadow);
+	display: flex;
+	gap: 2px;
+	padding: 0.2rem 0.2rem;
+	z-index: 10;
+}
+
+.bubble-menu button {
+	background-color: transparent;
+	border: none;
+	padding: 0.1rem 0.8rem;
+	border-radius: 0.4rem;
+	cursor: pointer;
+	font-size: 0.9em;
+	color: var(--popover-foreground);
+	transition:
+		background-color 0.2s ease-in-out,
+		color 0.2s ease-in-out;
+}
+
+.bubble-menu button:hover {
+	background-color: var(--accent);
+	color: var(--accent-foreground);
+}
+
+.bubble-menu button.is-active {
+	background-color: var(--primary);
+	color: var(--primary-foreground);
+}
+
+/* Floating Menu */
+.floating-menu {
+	display: flex;
+	gap: 2px;
+	background-color: var(--popover);
+	padding: 0.1rem;
+	border-radius: 0.6rem;
+	border: 2px solid var(--border);
+	box-shadow: var(--shadow);
+	z-index: 10;
+}
+
+.floating-menu button {
+	background-color: transparent;
+	border: none;
+	padding: 0.2rem 0.6rem;
+	border-radius: 0.4rem;
+	cursor: pointer;
+	font-size: 0.9em;
+	color: var(--popover-foreground);
+	transition:
+		background-color 0.2s ease-in-out,
+		color 0.2s ease-in-out;
+}
+
+.floating-menu button:hover {
+	background-color: var(--primary);
+	color: var(--primary-foreground);
+}
+
+.floating-menu button.is-active {
+	background-color: var(--primary);
+	color: var(--primary-foreground);
+}
+
+/* Task List */
+.tiptap ul[data-type='taskList'] {
+	list-style: none;
+	margin-left: 0;
+	margin-bottom: 0.5rem;
+	padding: 0;
+}
+
+.tiptap ul[data-type='taskList'] li {
+	display: flex;
+	align-items: flex-start;
+}
+
+.tiptap ul[data-type='taskList'] li > label {
+	flex: 0 0 auto;
+	margin-right: 0.5rem;
+	user-select: none;
+	line-height: inherit;
+}
+
+.tiptap ul[data-type='taskList'] li > div {
+	flex: 1 1 auto;
+}
+
+.tiptap ul[data-type='taskList'] input[type='checkbox'] {
+	cursor: pointer;
+	width: 1.1em;
+	height: 1.1em;
+	accent-color: var(--primary);
+	margin-top: 0.2em;
+}
+.tiptap ul[data-type='taskList'] p {
+	padding-top: 3px;
+}

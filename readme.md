@@ -1,0 +1,23 @@
+# TODO
+
+- [x] setup server
+- [x] db (sqlite with drizzle)
+- [x] oauth (betterauth)
+- [x] setup client
+- [x] base ui
+- [x] md rendering
+- [O] page
+  - [x] create
+  - [x] read
+  - [x] update
+  - [x] delete
+  - [ ] move
+- [O] note
+  - [x] create
+  - [x] read
+  - [x] update
+  - [x] delete
+  - [x] save note
+  - [ ] move
+- [ ] rewrite for cf stack
+- [ ] deploy
